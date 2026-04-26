@@ -1,0 +1,4 @@
+{
+  "cliente_001": { "pagado": true },
+  "cliente_002": { "pagado": false }
+}

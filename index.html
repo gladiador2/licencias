@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Licencias API</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 0 16px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
+    pre  { background: #f4f4f4; padding: 16px; border-radius: 6px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>Licencias – Static REST API</h1>
+  <p>Esta página sirve como documentación de la API estática de pagos de licencias.</p>
+
+  <h2>Endpoint</h2>
+  <p>GET <code>/data.json</code></p>
+
+  <h2>Respuesta de ejemplo</h2>
+  <pre id="json-example">Cargando…</pre>
+
+  <h2>Cómo consumirla</h2>
+  <pre>fetch('https://gladiador2.github.io/licencias/data.json')
+  .then(r => r.json())
+  .then(data => console.log(data));</pre>
+
+  <script>
+    fetch('data.json')
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('json-example').textContent =
+          JSON.stringify(data, null, 2);
+      })
+      .catch(() => {
+        document.getElementById('json-example').textContent = 'Error al cargar data.json';
+      });
+  </script>
+</body>
+</html>
